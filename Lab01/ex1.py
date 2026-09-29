@@ -1,28 +1,28 @@
 import random
 
 def experiment():
-    urna = ["R"] * 3 + ["A"] * 4 + ["N"] * 2
+    u = ["R"] * 3 + ["A"] * 4 + ["N"] * 2
 
-    zar = random.randint(1, 6)
+    z = random.randint(1, 6)
 
-    if zar in [2, 3, 5]:
-        urna.append("N")
-    elif zar == 6:
-        urna.append("R")
+    if z in [2, 3, 5]:
+        u.append("N")
+    elif z == 6:
+        u.append("R")
     else:  
-        urna.append("A")
+        u.append("A")
 
-    return random.choice(urna)
+    return random.choice(u)
 
 N = 1_000_000
-rosii = 0
+r = 0
 
 for _ in range(N):
     if experiment() == "R":
-        rosii += 1
+        r += 1
 
-probabilitate_simulata = rosii / N
-print("Probabilitatea simulata de a extrage o bila rosie este:", probabilitate_simulata)
+p = r / N
+print("Probabilitatea simulata de a extrage o bila rosie este:", p)
 print("Probabilitatea teoretica de a extrage o bila rosie este:", 19/60, "≈", 0.31666)
 
 
