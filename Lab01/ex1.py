@@ -2,7 +2,6 @@ import random
 
 def experiment():
     u = ["R"] * 3 + ["A"] * 4 + ["N"] * 2
-
     z = random.randint(1, 6)
 
     if z in [2, 3, 5]:
@@ -23,7 +22,6 @@ for _ in range(N):
 
 p = r / N
 print("Probabilitatea simulata de a extrage o bila rosie este:", p)
-print("Probabilitatea teoretica de a extrage o bila rosie este:", 19/60, "≈", 0.31666)
+print("Probabilitatea teoretica de a extrage o bila rosie este:", 19/60, "=", "0.31(6)")
 
 
-#probabilitatea teoretica este: P(r) = P1 * Pr1 + P2 * Pr2 + P3 * Pr3 = 3/6 * 3/10 + 1/6 * 4/10 + 2/6 * 3/10 = 19/60 ≈ 0.31666
