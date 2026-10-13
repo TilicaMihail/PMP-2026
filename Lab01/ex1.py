@@ -22,6 +22,6 @@ for _ in range(N):
 
 p = r / N
 print("Probabilitatea simulata de a extrage o bila rosie este:", p)
-print("Probabilitatea teoretica de a extrage o bila rosie este:", 19/60, "=", "0.31(6)")
+print("Probabilitatea teoretica de a extrage o bila rosie este:", "19/60", "=", "0.31(6)")
 
 
