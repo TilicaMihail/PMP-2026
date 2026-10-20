@@ -2,6 +2,10 @@ from pgmpy.models import DiscreteBayesianNetwork
 from pgmpy.factors.discrete import TabularCPD
 from pgmpy.inference import VariableElimination
 
+# C - usa aleasa de competitor
+# P - usa cu premiu
+# H - usa deschisa de host
+
 model = DiscreteBayesianNetwork([
     ("C", "H"),
     ("P", "H")
