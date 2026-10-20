@@ -129,5 +129,5 @@ result = inference.query(
     show_progress=False
 )
 
-print("\nc) Probabilitatea ca Jucatorul x, dat fiind ca Jucatorul 1 a castigat:")
+print("\nc) Probabilitatea ca Jucatorul x a inceput jocul, dat fiind ca s-a obtinut o singura stema la a doua aruncare:")
 print(result)
