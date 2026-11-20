@@ -19,23 +19,25 @@ model.startprob_ = np.array([
 ])
 
 model.transmat_ = np.array([
-    [0.0, 0.5, 0.5],
-    [0.5, 0.25, 0.25],
-    [0.5, 0.25, 0.25]
+    [0.2, 0.4, 0, 0.4],
+    [0.4, 0.2, 0.4, 0],
+    [0, 0.4, 0.2, 0.4], 
+    [0.4, 0, 0.4, 0.2]
 ])
 
 model.emissionprob_ = np.array([
-    [0.1, 0.2, 0.4, 0.3],
-    [0.15, 0.25, 0.5, 0.1],
-    [0.2, 0.3, 0.4, 0.1]
+    [0.7, 0.2, 0.1],
+    [0.2, 0.6, 0.2],
+    [0.1, 0.3, 0.6],
+    [0.5, 0.2, 0.3]
 ])
 
-observed_grades = [
-    "FB", "FB", "S", "B", "B", "S", "B", "B", "NS", "B", "B", "S"
+observed_colors = [
+    "R", "G", "B", "B", "R"
 ]
 
 observations = np.array([
-    [grades.index(grade)] for grade in observed_grades
+    [colors.index(color)] for color in observed_colors
 ])
 
 log_probability, hidden_states = model.decode(
@@ -45,5 +47,5 @@ log_probability, hidden_states = model.decode(
 
 decoded_states = [states[index] for index in hidden_states]
 
-print("Dificultati:", decoded_states)
+print("Camere:", decoded_states)
 print("Probabilitate comuna:", np.exp(log_probability))
