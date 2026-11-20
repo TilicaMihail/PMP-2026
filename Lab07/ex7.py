@@ -21,10 +21,10 @@ with pm.Model() as model:
         tune=1000,
         chains=4,
         target_accept=0.9,
-        random_seed=42
+        random_seed=69
     )
 
 print(az.summary(trace, var_names=["mu", "sigma"], hdi_prob=0.95))
 
 az.plot_posterior(trace, var_names=["mu", "sigma"], hdi_prob=0.95)
-plt.show()
+plt.savefig("posterior.png", dpi=300, bbox_inches="tight")
