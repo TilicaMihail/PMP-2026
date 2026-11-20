@@ -1,30 +1,23 @@
-import numpy as np
 import pymc as pm
 import arviz as az
-import matplotlib.pyplot as plt
 
-data = np.array([56, 60, 58, 55, 57, 59, 61, 56, 58, 60])
+# A
+with pm.Model() as coin_model:
+    theta = pm.Beta("theta", alpha=2, beta=8)
+    k = pm.Binomial("k", n=20, p=theta, observed=5)
+    idata = pm.sample(draws=1000, tune=1000,
+    chains=4, random_seed=41)
+print(az.summary(idata, var_names=["theta"]))
 
-with pm.Model() as model:
-    mu = pm.Normal("mu", mu=2, sigma=8)
-    sigma = pm.HalfNormal("sigma", sigma=10)
+pm.sample_posterior_predictive(idata, model=coin_model)
 
-    observations = pm.Normal(
-        "observations",
-        mu=mu,
-        sigma=sigma,
-        observed=data
-    )
+# C
 
-    trace = pm.sample(
-        draws=2000,
-        tune=1000,
-        chains=4,
-        target_accept=0.9,
-        random_seed=69
-    )
+with pm.Model() as coin_model:
+    theta = pm.Beta("theta", alpha=2, beta=8)
+    k = pm.Binomial("k", n=15, p=theta, observed=3)
+    idata = pm.sample(draws=1000, tune=1000,
+    chains=4, random_seed=41)
+print(az.summary(idata, var_names=["theta"]))
 
-print(az.summary(trace, var_names=["mu", "sigma"], hdi_prob=0.95))
-
-az.plot_posterior(trace, var_names=["mu", "sigma"], hdi_prob=0.95)
-plt.savefig("posterior.png", dpi=300, bbox_inches="tight")
+pm.sample_posterior_predictive(idata, model=coin_model)
