@@ -2,7 +2,7 @@
 
 ## Efectul lui Y
 
-Pe măsură ce numărul clienților care cumpără produsul crește, distribuția posterioară a numărului total de clienți se deplasează către dreapta, iar media acesteia crește. Acest lucru este intuitiv, deoarece un număr mai mare de cumpărători sugerează un număr mai mare de vizitatori.
+Pe măsură ce numărul clienților care cumpără produsul crește, distribuția posterioară a numărului total de clienți se deplasează către dreapta, iar media acesteia crește. Acest lucru se explica deoarece un număr mai mare de cumpărători sugerează un număr mai mare de vizitatori.
 
 De asemenea, numărul total de clienți nu poate fi mai mic decât numărul cumpărătorilor. Pentru o valoare fixă a lui theta, modificarea lui Y nu afectează varianța distribuției posterioare.
 
